@@ -16,7 +16,7 @@ export default function Home() {
         Router.push('/pymes');
       }
     }
-  });
+  }, []);
 
   return (
     <div className="container">
