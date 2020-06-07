@@ -22,11 +22,11 @@ const Header = () => {
       </div>
       <ul>
         {sign ? (
+          ''
+        ) : (
           <Link href="/login">
             <li>Iniciar sesión</li>
           </Link>
-        ) : (
-          ''
         )}
       </ul>
 
