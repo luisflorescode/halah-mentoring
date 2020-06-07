@@ -19,7 +19,7 @@ const Carousel = ({ children, headerList }) => (
         transition: 450ms transform, 450ms -webkit-transform;
         font-size: 0;
         white-space: nowrap;
-        margin: 70px 0px;
+        margin: 20px 0px;
         padding-bottom: 10px;
       }
 

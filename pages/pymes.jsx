@@ -1,9 +1,12 @@
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Carousel from '../components/Carousel';
 import CarouselItem from '../components/CarouselItem';
+import CarouselMentor from '../components/CarouselMentor';
 
-export default function PyMES({ ingenieria, negocios, marketing, transformacion, diseño, creacion }) {
+export default function PyMES({ ingenieria, negocios, marketing, transformacion, diseño, creacion, mentors }) {
   return (
     <div className="container">
       <Head>
@@ -11,6 +14,7 @@ export default function PyMES({ ingenieria, negocios, marketing, transformacion,
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+      <h1 className="title">Biblioteca de recursos</h1>
       <Carousel headerList={ingenieria.data[0].categories[0].toUpperCase()}>
         {ingenieria.data.map((item) => (
           <CarouselItem key={item.id} {...item} />
@@ -41,6 +45,17 @@ export default function PyMES({ ingenieria, negocios, marketing, transformacion,
           <CarouselItem key={item.id} {...item} />
         ))}
       </Carousel>
+    <h1  className="title">Consigue una mentoria!</h1>
+    <Carousel headerList="NUESTROS MENTORES">
+      {mentors.data.map((item) => (
+        <CarouselMentor key={item.id} {...item} />
+      ))}
+    </Carousel>
+    <style jsx>{`
+      .title {
+        text-align: center;
+      }
+    `}</style>
     </div>
   );
 }
@@ -65,5 +80,8 @@ export async function getServerSideProps() {
   const resC = await fetch(`https://halah-mentoring.herokuapp.com/v1/resources?category=creacion-de-contenido`);
   const creacion = await resC.json();
 
-  return { props: { ingenieria, negocios, marketing, transformacion, diseño, creacion } }
+  const resE = await fetch(`https://halah-mentoring.herokuapp.com/v1/users?typeOfUser=mentor`);
+  const mentors = await resE.json();
+
+  return { props: { ingenieria, negocios, marketing, transformacion, diseño, creacion, mentors } }
 }

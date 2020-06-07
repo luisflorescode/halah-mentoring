@@ -1,15 +1,18 @@
 import PropTypes from 'prop-types';
 // import playIcon from '../public/static/play-icon.png';
 
-const CarouselItem = ({ url, preview, description, title }) => {
+const CarouselItem = ({ firstName, lastName, description, calendly, email }) => {
   return (
-    <a href={url} className='carousel-item'>
-      <img className='carousel-item__img' src={preview} />
-      <div className='carousel-item__details'>
-        <p className='carousel-item__details--title'>{title}</p>
-        <p className='carousel-item__details--subtitle'>
-          {description}
-        </p>
+    <div className='carousel-item'>
+      <div className='carousel-item__img'>
+        <div>
+          <p>{`${firstName} ${lastName}`}</p>
+          <p>{email}</p>
+          <p>{description}</p>
+          <a href={calendly}>
+            <div>Agendar</div>
+          </a>
+        </div>
       </div>
       <style jsx>{`
         .carousel-item {
@@ -84,22 +87,24 @@ const CarouselItem = ({ url, preview, description, title }) => {
           margin: 3px 0px;
         }
       `}</style>
-    </a>
+    </div>
   );
 };
 
 CarouselItem.propTypes = {
-  title: PropTypes.string.isRequired,
+  firstName: PropTypes.string.isRequired,
+  lastName: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
-  preview: PropTypes.string.isRequired,
+  calendly: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
 };
 
 CarouselItem.defaultProps = {
-  title: 'Default title',
-  description: 'Default description',
-  url: 'https://www.lancetalent.com/blog/wp-content/uploads/paginas_erro_404.png',
-  preview: '',
+  firstName: 'Nombre',
+  lastName: 'Apellido',
+  description: 'descripcion',
+  calendly: 'link de calendly',
+  email: 'nombre@mail.com',
 }
 
 export default CarouselItem;
