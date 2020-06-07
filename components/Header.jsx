@@ -1,12 +1,9 @@
 const Header = () => (
   <header>
     <div>
-      <img className="logo" src="./static/idea.png" alt="logo" />
       <h1>#JuntosPodemos</h1>
     </div>
     <ul>
-      <li>PYMES</li>
-      <li>Mentores</li>
       <li>Iniciar sesión</li>
     </ul>
 
@@ -23,11 +20,6 @@ const Header = () => (
 
       div {
         display: flex;
-      }
-
-      .logo {
-        width: 36px;
-        height: 36px;
       }
 
       h1 {

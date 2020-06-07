@@ -12,8 +12,11 @@ const Message = ({ children }) => {
 
       <style jsx>{`
         div {
-          width: 320px;
-          height: 240px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 480px;
+          margin: 0 auto;
           padding: 25px;
           border-radius: 15px;
         }
