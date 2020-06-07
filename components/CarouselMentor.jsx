@@ -1,19 +1,12 @@
 import PropTypes from 'prop-types';
 // import playIcon from '../public/static/play-icon.png';
 
-const CarouselItem = ({
-  firstName,
-  lastName,
-  description,
-  calendly,
-  email,
-}) => {
+const CarouselItem = ({ firstName, lastName, description, calendly }) => {
   return (
     <div className="carousel-item">
       <div className="carousel-item__img">
         <div>
           <p>{`${firstName} ${lastName}`}</p>
-          <p>{email}</p>
           <p>{description}</p>
           <a href={calendly} target="_blank">
             <div>Agendar</div>
