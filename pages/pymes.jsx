@@ -30,6 +30,12 @@ export default function PyMES({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+      <h1 className="title">Consigue una mentoria!</h1>
+      <Carousel headerList="NUESTROS MENTORES">
+        {mentors.data.map((item) => (
+          <CarouselMentor key={item.id} {...item} />
+        ))}
+      </Carousel>
       <h1 className="title">Biblioteca de recursos</h1>
       <Carousel headerList={transformacion.data[0].categories[0].toUpperCase()}>
         {transformacion.data.map((item) => (
@@ -59,12 +65,6 @@ export default function PyMES({
       <Carousel headerList={creacion.data[0].categories[0].toUpperCase()}>
         {creacion.data.map((item) => (
           <CarouselItem key={item.id} {...item} />
-        ))}
-      </Carousel>
-      <h1 className="title">Consigue una mentoria!</h1>
-      <Carousel headerList="NUESTROS MENTORES">
-        {mentors.data.map((item) => (
-          <CarouselMentor key={item.id} {...item} />
         ))}
       </Carousel>
       <style jsx>{`

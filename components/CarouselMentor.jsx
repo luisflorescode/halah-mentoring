@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 // import playIcon from '../public/static/play-icon.png';
 
-const CarouselItem = ({ firstName, lastName, description, calendly }) => {
+const CarouselItem = ({ name, lastName, description, calendly }) => {
   return (
     <div className="carousel-item">
       <div className="carousel-item__img">
         <div>
-          <p>{`${firstName} ${lastName}`}</p>
+          <p>{`${name} ${lastName}`}</p>
           <p>{description}</p>
           <a href={calendly} target="_blank">
             <div>Agendar</div>
@@ -19,8 +19,7 @@ const CarouselItem = ({ firstName, lastName, description, calendly }) => {
           overflow: hidden;
           position: relative;
           display: inline-block;
-          width: 300px;
-          height: 350px;
+          width: 450px;
           margin-right: 10px;
           font-size: 20px;
           cursor: pointer;
@@ -34,9 +33,18 @@ const CarouselItem = ({ firstName, lastName, description, calendly }) => {
           transform: translate3d(100px, 0, 0);
         }
 
+        p,
+        a {
+          margin: 0;
+          font-size: 12px;
+        }
+
         .carousel-item__img {
+          display: flex;
+          flex-direction: column;
+          padding: 15px;
           background-color: #ffd422;
-          width: 300px;
+          width: 100%;
           height: inherit;
           -o-object-fit: cover;
           object-fit: cover;
