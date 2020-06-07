@@ -1,14 +1,13 @@
 import Router from 'next/router';
 
-const Message = ({ title, children }) => {
+const Message = ({ children }) => {
   const login = () => {
     Router.push('/login');
   };
 
   return (
     <div>
-      <h1>{title}</h1>
-      <p>{children}</p>
+      <h1>{children}</h1>
       <button onClick={login}>Aceptar</button>
 
       <style jsx>{`

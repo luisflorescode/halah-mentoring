@@ -1,11 +1,42 @@
 import axios from 'axios';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useState } from 'react';
+import Message from './Message';
 
 const SignUpMentor = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [response, setResponse] = useState(null);
+
+  const signUp = async (values) => {
+    setLoading(true);
+    setError(null);
+    try {
+      const URL = `${process.env.NEXT_PUBLIC_API_URL}/v1/auth/sign-up`;
+      const data = {
+        apiKeyToken: process.env.NEXT_PUBLIC_API_KEY,
+        user: {
+          email: values.email,
+          password: values.password,
+          name: values.name,
+          lastName: values.lastName,
+          calendly: values.calendly,
+          description: values.description,
+          typeOfUser: 'mentor',
+          categories: [values.area],
+        },
+      };
+      const res = await axios.post(URL, data);
+      setResponse(res);
+    } catch (err) {
+      setError(err);
+    }
+    setLoading(false);
+  };
+
+  if (response) {
+    return <Message>Usuario registrado correctamente</Message>;
+  }
 
   return (
     <div className="sign-up-mentor">
@@ -18,6 +49,7 @@ const SignUpMentor = () => {
           description: '',
           email: '',
           password: '',
+          area: 'desarrollo',
         }}
         validate={(values) => {
           const errors = {};
@@ -35,19 +67,20 @@ const SignUpMentor = () => {
             errors.description = 'Por favor cuéntanos sobre ti';
           }
           if (!values.email) {
-            errors.email = 'Por favor ingresa un password';
+            errors.email = 'Por favor ingresa un correo electrónico';
           } else if (
             !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
           ) {
             errors.email = 'El email ingresado es inválido';
           }
+          if (!values.password) {
+            errors.password = 'Por favor ingresa una contraseña';
+          }
           return errors;
         }}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
+        onSubmit={async (values, { setSubmitting }) => {
+          await signUp(values);
+          setSubmitting(false);
         }}
       >
         {({ isSubmitting }) => (
@@ -93,6 +126,15 @@ const SignUpMentor = () => {
                 component="div"
                 className="input__error"
               />
+            </label>
+            <label>
+              ¿Con qué área te identificas?
+              <Field as="select" name="area">
+                <option value="desarrollo">Desarrollo</option>
+                <option value="diseno">Diseño</option>
+                <option value="marketing">Marketing</option>
+                <option value="negocios">Negocios</option>
+              </Field>
             </label>
             <label>
               Correo electrónico

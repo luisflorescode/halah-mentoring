@@ -39,7 +39,8 @@ form {
 }
 
 input,
-textarea {
+textarea,
+select {
   padding: 5px;
   border-radius: 5px;
   outline-style: none;
