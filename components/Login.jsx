@@ -27,7 +27,11 @@ const Login = () => {
         },
       );
       localStorage.setItem('session', JSON.stringify(response.data));
-      Router.push('/pymes');
+      if (response.data.user.typeOfUser === 'mentor') {
+        Router.push('/mentor');
+      } else {
+        Router.push('/pymes');
+      }
     } catch (err) {
       setError(err);
     }

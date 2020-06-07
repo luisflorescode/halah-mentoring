@@ -1,28 +1,23 @@
 const Hero = () => (
   <div className="hero">
-    <h1>No estás sólo, aquí estámos para ayudarte</h1>
+    <h1>No estás sólo, aquí hay una comunidad para ayudarte</h1>
     <div className="content">
       <article>
-        <h2>Transformación digital para PYMES a través de mentorías</h2>
+        <h2>Motivación para PyMEs</h2>
         <p>
-          orem Ipsum es simplemente el texto de relleno de las imprentas y
-          archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de
-          las industrias desde el año 1500, cuando un impresor (N. del T.
-          persona que se dedica a la imprenta) desconocido usó una galería de
-          textos y los mezcló de tal manera que logró hacer un libro de textos
-          especimen.
+          Sabes que la curva para adaptarse a la nueva era digital puede ser
+          compleja pero ya no estás solo aquí, te conectamos con gente líder en
+          tecnología que está dispuesta a ayudarte, porque juntos podemos salir
+          de esta.
         </p>
       </article>
       <img src="./static/team.png" alt="team" />
       <article>
-        <h2>Sé mentor y ayuda a PYMES a superar está crisis</h2>
+        <h2>Motivación para mentores</h2>
         <p>
-          orem Ipsum es simplemente el texto de relleno de las imprentas y
-          archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de
-          las industrias desde el año 1500, cuando un impresor (N. del T.
-          persona que se dedica a la imprenta) desconocido usó una galería de
-          textos y los mezcló de tal manera que logró hacer un libro de textos
-          especimen.
+          Sabemos que tienes algo que enseñar, aquí está la gente que te
+          necesita, inscribete, mentorea, haz networking y sobre todo ayuda,
+          todo cuenta y generando comunidad juntos podemos.
         </p>
       </article>
     </div>
