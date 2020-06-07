@@ -1,15 +1,21 @@
 import PropTypes from 'prop-types';
 // import playIcon from '../public/static/play-icon.png';
 
-const CarouselItem = ({ firstName, lastName, description, calendly, email }) => {
+const CarouselItem = ({
+  firstName,
+  lastName,
+  description,
+  calendly,
+  email,
+}) => {
   return (
-    <div className='carousel-item'>
-      <div className='carousel-item__img'>
+    <div className="carousel-item">
+      <div className="carousel-item__img">
         <div>
           <p>{`${firstName} ${lastName}`}</p>
           <p>{email}</p>
           <p>{description}</p>
-          <a href={calendly}>
+          <a href={calendly} target="_blank">
             <div>Agendar</div>
           </a>
         </div>
@@ -30,7 +36,7 @@ const CarouselItem = ({ firstName, lastName, description, calendly, email }) => 
           transform-origin: center left;
         }
 
-        .carousel-item:hover~.carousel-item {
+        .carousel-item:hover ~ .carousel-item {
           -webkit-transform: translate3d(100px, 0, 0);
           transform: translate3d(100px, 0, 0);
         }
@@ -45,7 +51,11 @@ const CarouselItem = ({ firstName, lastName, description, calendly, email }) => 
 
         .carousel-item__details {
           align-items: flex-start;
-          background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+          background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.9) 0%,
+            rgba(0, 0, 0, 0) 100%
+          );
           bottom: 0;
           display: flex;
           flex-direction: column;
@@ -72,7 +82,7 @@ const CarouselItem = ({ firstName, lastName, description, calendly, email }) => 
         .carousel-item__details--title {
           font-size: 18px;
           color: white;
-          word-wrap: break-word;      /* IE 5.5-7 */
+          word-wrap: break-word; /* IE 5.5-7 */
           white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
           white-space: pre-wrap;
           margin: 5px 0px 5px 0px;
@@ -80,7 +90,7 @@ const CarouselItem = ({ firstName, lastName, description, calendly, email }) => 
 
         .carousel-item__details--subtitle {
           color: white;
-          word-wrap: break-word;      /* IE 5.5-7 */
+          word-wrap: break-word; /* IE 5.5-7 */
           white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
           white-space: pre-wrap;
           font-size: 12px;
@@ -105,6 +115,6 @@ CarouselItem.defaultProps = {
   description: 'descripcion',
   calendly: 'link de calendly',
   email: 'nombre@mail.com',
-}
+};
 
 export default CarouselItem;

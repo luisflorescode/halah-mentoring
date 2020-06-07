@@ -10,11 +10,7 @@ export default function Home() {
   useEffect(() => {
     const sessionData = JSON.parse(localStorage.getItem('session'));
     if (sessionData) {
-      if (sessionData.user.typeOfUser === 'mentor') {
-        Router.push('/mentor');
-      } else {
-        Router.push('/pymes');
-      }
+      Router.push('/pymes');
     }
   }, []);
 

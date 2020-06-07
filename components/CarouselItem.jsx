@@ -3,13 +3,11 @@ import PropTypes from 'prop-types';
 
 const CarouselItem = ({ url, preview, description, title }) => {
   return (
-    <a href={url} className='carousel-item'>
-      <img className='carousel-item__img' src={preview} />
-      <div className='carousel-item__details'>
-        <p className='carousel-item__details--title'>{title}</p>
-        <p className='carousel-item__details--subtitle'>
-          {description}
-        </p>
+    <a href={url} className="carousel-item" target="_blank">
+      <img className="carousel-item__img" src={preview} />
+      <div className="carousel-item__details">
+        <p className="carousel-item__details--title">{title}</p>
+        <p className="carousel-item__details--subtitle">{description}</p>
       </div>
       <style jsx>{`
         .carousel-item {
@@ -27,7 +25,7 @@ const CarouselItem = ({ url, preview, description, title }) => {
           transform-origin: center left;
         }
 
-        .carousel-item:hover~.carousel-item {
+        .carousel-item:hover ~ .carousel-item {
           -webkit-transform: translate3d(100px, 0, 0);
           transform: translate3d(100px, 0, 0);
         }
@@ -42,7 +40,11 @@ const CarouselItem = ({ url, preview, description, title }) => {
 
         .carousel-item__details {
           align-items: flex-start;
-          background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+          background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.9) 0%,
+            rgba(0, 0, 0, 0) 100%
+          );
           bottom: 0;
           display: flex;
           flex-direction: column;
@@ -69,7 +71,7 @@ const CarouselItem = ({ url, preview, description, title }) => {
         .carousel-item__details--title {
           font-size: 18px;
           color: white;
-          word-wrap: break-word;      /* IE 5.5-7 */
+          word-wrap: break-word; /* IE 5.5-7 */
           white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
           white-space: pre-wrap;
           margin: 5px 0px 5px 0px;
@@ -77,7 +79,7 @@ const CarouselItem = ({ url, preview, description, title }) => {
 
         .carousel-item__details--subtitle {
           color: white;
-          word-wrap: break-word;      /* IE 5.5-7 */
+          word-wrap: break-word; /* IE 5.5-7 */
           white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
           white-space: pre-wrap;
           font-size: 12px;
@@ -98,8 +100,9 @@ CarouselItem.propTypes = {
 CarouselItem.defaultProps = {
   title: 'Default title',
   description: 'Default description',
-  url: 'https://www.lancetalent.com/blog/wp-content/uploads/paginas_erro_404.png',
+  url:
+    'https://www.lancetalent.com/blog/wp-content/uploads/paginas_erro_404.png',
   preview: '',
-}
+};
 
 export default CarouselItem;
