@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Router from 'next/router';
 
 const Header = () => {
   const [sign, setSign] = useState(false);
@@ -13,6 +14,12 @@ const Header = () => {
     }
   });
 
+  const logout = () => {
+    setSign(false);
+    localStorage.removeItem('session');
+    Router.push('/');
+  };
+
   return (
     <header>
       <div>
@@ -22,7 +29,7 @@ const Header = () => {
       </div>
       <ul>
         {sign ? (
-          ''
+          <li onClick={logout}>Cerrar sesión</li>
         ) : (
           <Link href="/login">
             <li>Iniciar sesión</li>
