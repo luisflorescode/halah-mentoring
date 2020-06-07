@@ -18,7 +18,7 @@ export default function PyMES({
 }) {
   useEffect(() => {
     const sessionData = JSON.parse(localStorage.getItem('session'));
-    if (sessionData.user.typeOfUser !== 'pyme' || !sessionData) {
+    if (!sessionData) {
       Router.push('/');
     }
   });
