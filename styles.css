@@ -13,3 +13,51 @@ h5,
 h6 {
   font-family: 'Open Sans Condensed', sans-serif;
 }
+
+form,
+label {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 15px;
+}
+
+form {
+  border-radius: 15px;
+  padding: 25px;
+  border: 1px solid black;
+  box-shadow: 5px 10px #888888;
+  margin-bottom: 25px;
+  background-color: #fff;
+}
+
+.input__error {
+  color: #ea44a9;
+}
+
+input,
+textarea {
+  padding: 5px;
+  border-radius: 5px;
+  outline-style: none;
+  border: 1px solid black;
+  box-shadow: 5px 5px #888888;
+}
+
+button {
+  cursor: pointer;
+  outline-style: none;
+  background-color: #ea44a9;
+  color: #fff;
+  box-shadow: 5px 5px #888888;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  margin-top: 5px;
+  text-shadow: 2px 2px #000;
+  border: 1px solid #000;
+}
