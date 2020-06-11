@@ -29,6 +29,7 @@ const Benefits = () => (
 
     <style jsx>{`
       .benefit {
+        margin: 10px;
         width: 350px;
         padding: 5px;
         display: flex;
@@ -60,6 +61,13 @@ const Benefits = () => (
       .title {
         color: #000;
         text-shadow: 2px 2px #ea44a9;
+      }
+
+      @media screen and (max-width: 425px) {
+        .benefits_list {
+          flex-direction: column;
+          align-items: center;
+        }
       }
     `}</style>
   </div>

@@ -28,6 +28,7 @@ const Sign = () => (
         padding: 25px;
         background-color: #ea44a9;
         color: #fff;
+        text-align: center;
         text-shadow: 2px 2px #000;
       }
 

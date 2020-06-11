@@ -34,16 +34,17 @@ const Hero = () => (
       h1 {
         color: #ea44a9;
         text-shadow: 2px 2px #ffd422;
+        text-align: center
       }
 
       article {
-        width: 350px;
         margin: 25px;
+        max-width: 350px;
       }
 
       .content {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
       }
 
@@ -51,6 +52,12 @@ const Hero = () => (
         margin: 25px;
         height: 250px;
         width: auto;
+      }
+
+      @media screen and (max-width: 425px) {
+        .content {
+          flex-direction: column;
+        }
       }
     `}</style>
   </div>

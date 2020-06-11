@@ -20,6 +20,7 @@ const CarouselItem = ({ name, lastName, description, calendly }) => {
           position: relative;
           display: inline-block;
           width: 450px;
+          height: 100px;
           margin-right: 10px;
           font-size: 20px;
           cursor: pointer;
@@ -33,6 +34,11 @@ const CarouselItem = ({ name, lastName, description, calendly }) => {
           transform: translate3d(100px, 0, 0);
         }
 
+        p {
+          word-wrap: break-word; /* IE 5.5-7 */
+          white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
+          white-space: pre-wrap;
+        }
         p,
         a {
           margin: 0;
@@ -44,7 +50,6 @@ const CarouselItem = ({ name, lastName, description, calendly }) => {
           flex-direction: column;
           padding: 15px;
           background-color: #ffd422;
-          width: 100%;
           height: inherit;
           -o-object-fit: cover;
           object-fit: cover;

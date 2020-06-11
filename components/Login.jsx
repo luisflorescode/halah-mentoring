@@ -110,6 +110,7 @@ const Login = () => {
           background-color: #ffd422;
           text-shadow: 2px 2px #fff;
         }
+
       `}</style>
     </div>
   );
