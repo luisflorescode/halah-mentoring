@@ -62,3 +62,14 @@ button {
   text-shadow: 2px 2px #000;
   border: 1px solid #000;
 }
+
+
+@media screen and (max-width: 425px) {
+  form {
+    width: 80%;
+  }
+
+  label {
+    width: auto;
+  }
+}

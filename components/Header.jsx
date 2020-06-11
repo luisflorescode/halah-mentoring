@@ -63,6 +63,7 @@ const Header = () => {
           list-style-type: none;
           display: flex;
           color: #fff;
+          padding: 0px;
         }
 
         li {
@@ -73,6 +74,7 @@ const Header = () => {
         li:hover {
           color: #ffd422;
         }
+
       `}</style>
     </header>
   );
